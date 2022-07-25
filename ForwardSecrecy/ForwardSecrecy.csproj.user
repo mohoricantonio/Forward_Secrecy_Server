@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="EmailHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UControls\NewMailUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UControls\ReceivedMailUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
