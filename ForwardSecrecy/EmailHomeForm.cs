@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ForwardSecrecy.Classes;
 using ForwardSecrecy.UControls;
 
 namespace ForwardSecrecy
 {
     public partial class EmailHomeForm : Form
     {
-        private string EmailSender;
-        public EmailHomeForm(string emailSender)
+        private Account LoggedUser;
+        public EmailHomeForm(Account loggedUser)
         {
             InitializeComponent();
-            EmailSender = emailSender;
+            LoggedUser = loggedUser;
         }
 
         private void btnMailRcv_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace ForwardSecrecy
 
         private void btnNewMail_Click(object sender, EventArgs e)
         {
-            NewMailUC uc = new NewMailUC(EmailSender);
+            NewMailUC uc = new NewMailUC(LoggedUser);
             AddUserControl(uc);
         }
 

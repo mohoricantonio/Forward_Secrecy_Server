@@ -1,3 +1,4 @@
+using ForwardSecrecy.Classes;
 using System.Net.Mail;
 
 namespace ForwardSecrecy
@@ -11,12 +12,13 @@ namespace ForwardSecrecy
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            string name = txtName.Text;
             string port = txtPort.Text;
             string email = txtEmailLogin.Text;
             string password = txtPasswordLogin.Text;
             string host = txtHost.Text;
 
-            if(host =="" || port == "" || email == "" || password == "")
+            if(name =="" || host =="" || port == "" || email == "" || password == "")
             {
                 MessageBox.Show("Plese enter all data!");
             }
@@ -24,7 +26,8 @@ namespace ForwardSecrecy
             {
                 if(ValidateCredentials(host, int.Parse(port), email, password))
                 {
-                    EmailHomeForm form = new EmailHomeForm(email);
+                    Account loggedUser = new Account(name, password, email, host, int.Parse(port));
+                    EmailHomeForm form = new EmailHomeForm(loggedUser);
                     this.Hide();
                     form.ShowDialog();
                     
@@ -32,6 +35,7 @@ namespace ForwardSecrecy
                     txtEmailLogin.Text = "";
                     txtHost.Text = "";
                     txtPasswordLogin.Text = "";
+                    txtName.Text = "";
                     this.Show();
                 }
             }
