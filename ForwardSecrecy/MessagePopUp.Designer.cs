@@ -34,7 +34,6 @@
             // 
             // rtxtMessage
             // 
-            this.rtxtMessage.Enabled = false;
             this.rtxtMessage.Location = new System.Drawing.Point(3, 3);
             this.rtxtMessage.Name = "rtxtMessage";
             this.rtxtMessage.Size = new System.Drawing.Size(776, 399);

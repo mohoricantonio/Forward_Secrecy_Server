@@ -63,7 +63,7 @@
             this.richTxtBody.Location = new System.Drawing.Point(55, 90);
             this.richTxtBody.Name = "richTxtBody";
             this.richTxtBody.Size = new System.Drawing.Size(774, 232);
-            this.richTxtBody.TabIndex = 2;
+            this.richTxtBody.TabIndex = 3;
             this.richTxtBody.Text = "";
             // 
             // label2
@@ -90,7 +90,7 @@
             this.btnSend.Location = new System.Drawing.Point(690, 328);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(139, 41);
-            this.btnSend.TabIndex = 5;
+            this.btnSend.TabIndex = 4;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -100,14 +100,14 @@
             this.txtSubject.Location = new System.Drawing.Point(55, 61);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(164, 23);
-            this.txtSubject.TabIndex = 6;
+            this.txtSubject.TabIndex = 2;
             // 
             // txtSendTo
             // 
             this.txtSendTo.Location = new System.Drawing.Point(55, 32);
             this.txtSendTo.Name = "txtSendTo";
             this.txtSendTo.Size = new System.Drawing.Size(164, 23);
-            this.txtSendTo.TabIndex = 8;
+            this.txtSendTo.TabIndex = 1;
             // 
             // label4
             // 
