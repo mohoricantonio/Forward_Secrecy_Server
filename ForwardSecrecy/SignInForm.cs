@@ -17,8 +17,10 @@ namespace ForwardSecrecy
             string email = txtEmailLogin.Text;
             string password = txtPasswordLogin.Text;
             string host = txtHost.Text;
+            string pop3host = txtPOP3host.Text;
+            string pop3port = txtPOP3port.Text;
 
-            if(name =="" || host =="" || port == "" || email == "" || password == "")
+            if (name == "" || host == "" || port == "" || email == "" || password == "" || pop3host == "" || pop3port == "") 
             {
                 MessageBox.Show("Plese enter all data!");
             }
@@ -26,7 +28,7 @@ namespace ForwardSecrecy
             {
                 if(ValidateCredentials(host, int.Parse(port), email, password))
                 {
-                    Account loggedUser = new Account(name, password, email, host, int.Parse(port));
+                    Account loggedUser = new Account(name, password, email, host, int.Parse(port), int.Parse(pop3port), pop3host);
                     EmailHomeForm form = new EmailHomeForm(loggedUser);
                     this.Hide();
                     form.ShowDialog();
@@ -36,6 +38,8 @@ namespace ForwardSecrecy
                     txtHost.Text = "";
                     txtPasswordLogin.Text = "";
                     txtName.Text = "";
+                    txtPOP3port.Text = "";
+                    txtPOP3host.Text = "";
                     this.Show();
                 }
             }

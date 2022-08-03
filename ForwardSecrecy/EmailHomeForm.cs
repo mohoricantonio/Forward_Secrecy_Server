@@ -23,7 +23,7 @@ namespace ForwardSecrecy
 
         private void btnMailRcv_Click(object sender, EventArgs e)
         {
-            ReceivedMailUC uc = new ReceivedMailUC();
+            ReceivedMailUC uc = new ReceivedMailUC(LoggedUser);
             AddUserControl(uc);
             
         }
@@ -43,7 +43,7 @@ namespace ForwardSecrecy
 
         private void EmailHomeForm_Load(object sender, EventArgs e)
         {
-            ReceivedMailUC uc = new ReceivedMailUC();
+            ReceivedMailUC uc = new ReceivedMailUC(LoggedUser);
             AddUserControl(uc);
         }
     }

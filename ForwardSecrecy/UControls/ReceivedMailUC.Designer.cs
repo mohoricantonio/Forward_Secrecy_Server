@@ -28,32 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvRcvMail = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnOpenMessage = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRcvMail)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dgvRcvMail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ovdje ce biti prikazani Mailovi!";
+            this.dgvRcvMail.AllowUserToAddRows = false;
+            this.dgvRcvMail.AllowUserToDeleteRows = false;
+            this.dgvRcvMail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRcvMail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.From,
+            this.Subject});
+            this.dgvRcvMail.Location = new System.Drawing.Point(7, 8);
+            this.dgvRcvMail.Name = "dgvRcvMail";
+            this.dgvRcvMail.RowTemplate.Height = 25;
+            this.dgvRcvMail.Size = new System.Drawing.Size(834, 344);
+            this.dgvRcvMail.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // From
+            // 
+            this.From.HeaderText = "From";
+            this.From.Name = "From";
+            this.From.Width = 225;
+            // 
+            // Subject
+            // 
+            this.Subject.HeaderText = "Subject";
+            this.Subject.Name = "Subject";
+            this.Subject.Width = 515;
+            // 
+            // btnOpenMessage
+            // 
+            this.btnOpenMessage.Location = new System.Drawing.Point(707, 358);
+            this.btnOpenMessage.Name = "btnOpenMessage";
+            this.btnOpenMessage.Size = new System.Drawing.Size(134, 31);
+            this.btnOpenMessage.TabIndex = 1;
+            this.btnOpenMessage.Text = "Open message";
+            this.btnOpenMessage.UseVisualStyleBackColor = true;
+            this.btnOpenMessage.Click += new System.EventHandler(this.btnOpenMessage_Click);
             // 
             // ReceivedMailUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnOpenMessage);
+            this.Controls.Add(this.dgvRcvMail);
             this.Name = "ReceivedMailUC";
             this.Size = new System.Drawing.Size(845, 395);
+            this.Load += new System.EventHandler(this.ReceivedMailUC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRcvMail)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Label label1;
+        private DataGridView dgvRcvMail;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn From;
+        private DataGridViewTextBoxColumn Subject;
+        private Button btnOpenMessage;
     }
 }

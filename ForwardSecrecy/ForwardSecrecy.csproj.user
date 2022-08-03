@@ -4,6 +4,9 @@
     <Compile Update="EmailHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MessagePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
