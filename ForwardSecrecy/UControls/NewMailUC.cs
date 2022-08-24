@@ -27,6 +27,7 @@ namespace ForwardSecrecy.UControls
         {
             txtSender.Text = LoggedUser.Email;
             txtName.Text = LoggedUser.Name;
+            btnFetch.Enabled = false;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -54,6 +55,23 @@ namespace ForwardSecrecy.UControls
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void txtSendTo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSendTo.Text == "") btnFetch.Enabled = false;
+            else btnFetch.Enabled = true;
+        }
+
+        private void btnFetch_Click(object sender, EventArgs e)
+        {
+            ServerConnection server = new ServerConnection();
+            if (server.ConnectToServer() == 0)
+            {
+                server.SendMessageToServer("fetch!/&" + txtSendTo.Text);
+                MessageBox.Show(server.ReadMessageFromServer());
+                server.CloseConnectionToServer();
+            }
         }
     }
 }

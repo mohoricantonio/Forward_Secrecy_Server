@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.btnFetch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -108,6 +109,7 @@
             this.txtSendTo.Name = "txtSendTo";
             this.txtSendTo.Size = new System.Drawing.Size(164, 23);
             this.txtSendTo.TabIndex = 1;
+            this.txtSendTo.TextChanged += new System.EventHandler(this.txtSendTo_TextChanged);
             // 
             // label4
             // 
@@ -135,10 +137,22 @@
             this.txtName.Size = new System.Drawing.Size(164, 23);
             this.txtName.TabIndex = 10;
             // 
+            // btnFetch
+            // 
+            this.btnFetch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFetch.Location = new System.Drawing.Point(3, 328);
+            this.btnFetch.Name = "btnFetch";
+            this.btnFetch.Size = new System.Drawing.Size(221, 41);
+            this.btnFetch.TabIndex = 11;
+            this.btnFetch.Text = "Fetch key for encryption";
+            this.btnFetch.UseVisualStyleBackColor = true;
+            this.btnFetch.Click += new System.EventHandler(this.btnFetch_Click);
+            // 
             // NewMailUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnFetch);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSendTo);
@@ -171,5 +185,6 @@
         private Label label4;
         private Label label5;
         private TextBox txtName;
+        private Button btnFetch;
     }
 }
