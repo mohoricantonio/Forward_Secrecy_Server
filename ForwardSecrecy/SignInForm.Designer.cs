@@ -192,6 +192,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SignInForm";
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.SignInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

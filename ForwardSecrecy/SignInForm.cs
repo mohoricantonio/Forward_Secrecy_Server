@@ -64,5 +64,16 @@ namespace ForwardSecrecy
 
             }
         }
+
+        private void SignInForm_Load(object sender, EventArgs e)
+        {
+            txtPort.Text = "25";
+            txtEmailLogin.Text = "amohoric@foi.hr";
+            txtHost.Text = "mail.foi.hr";
+            txtPasswordLogin.Text = "cackalica08";
+            txtName.Text = "Antonio";
+            txtPOP3port.Text = "995";
+            txtPOP3host.Text = "barok.foi.hr";
+        }
     }
 }

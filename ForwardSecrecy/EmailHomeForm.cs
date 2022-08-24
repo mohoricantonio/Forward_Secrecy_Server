@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,6 +46,45 @@ namespace ForwardSecrecy
         {
             ReceivedMailUC uc = new ReceivedMailUC(LoggedUser);
             AddUserControl(uc);
+        }
+
+        private void btnSendKey_Click(object sender, EventArgs e)
+        {
+            ServerConnection server = new ServerConnection();
+            if (server.ConnectToServer() == 0)
+            {
+                server.SendMessageToServer(CreateKeyPair());
+                MessageBox.Show(server.ReadMessageFromServer());
+                server.CloseConnectionToServer();
+            }
+        }
+        private string CreateKeyPair()
+        {
+            string returnMe = "";
+
+            byte[] publicKey;
+            byte[] privateKey;
+
+            using (ECDiffieHellmanCng edc = new ECDiffieHellmanCng(CngKey.Create(CngAlgorithm.ECDiffieHellmanP256, null,
+                new CngKeyCreationParameters { ExportPolicy = CngExportPolicies.AllowPlaintextExport })))
+            {
+                edc.KeyDerivationFunction = ECDiffieHellmanKeyDerivationFunction.Hash;
+                edc.HashAlgorithm = CngAlgorithm.Sha256;
+                publicKey = edc.Key.Export(CngKeyBlobFormat.EccPublicBlob);
+                privateKey = edc.Key.Export(CngKeyBlobFormat.EccPrivateBlob);
+            }
+
+            StringBuilder stringBuilder = new StringBuilder(publicKey.Length *2);
+            foreach (byte b in publicKey)
+            {
+                stringBuilder.AppendFormat("{0:x2}", b);
+            }
+
+            DateTime now = DateTime.Now;
+
+            returnMe = "save!/&" + LoggedUser.Email + "!/&" + stringBuilder.ToString() + "!/&" + now;
+
+            return returnMe;
         }
     }
 }

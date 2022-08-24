@@ -32,11 +32,13 @@
             this.btnNewMail = new System.Windows.Forms.Button();
             this.btnMailRcv = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnSendKey = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSendKey);
             this.panel1.Controls.Add(this.btnNewMail);
             this.panel1.Controls.Add(this.btnMailRcv);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,6 +75,16 @@
             this.panelContainer.Size = new System.Drawing.Size(845, 395);
             this.panelContainer.TabIndex = 1;
             // 
+            // btnSendKey
+            // 
+            this.btnSendKey.Location = new System.Drawing.Point(729, 0);
+            this.btnSendKey.Name = "btnSendKey";
+            this.btnSendKey.Size = new System.Drawing.Size(116, 55);
+            this.btnSendKey.TabIndex = 2;
+            this.btnSendKey.Text = "Send key to server";
+            this.btnSendKey.UseVisualStyleBackColor = true;
+            this.btnSendKey.Click += new System.EventHandler(this.btnSendKey_Click);
+            // 
             // EmailHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -94,5 +106,6 @@
         private Button btnNewMail;
         private Button btnMailRcv;
         private Panel panelContainer;
+        private Button btnSendKey;
     }
 }
