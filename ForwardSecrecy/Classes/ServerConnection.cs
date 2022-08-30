@@ -41,7 +41,7 @@ namespace ForwardSecrecy.Classes
                 int byteCount = Encoding.ASCII.GetByteCount(message + 1);
                 byte[] sendData = Encoding.ASCII.GetBytes(message);
                 Stream.Write(sendData, 0, sendData.Length);
-                MessageBox.Show("Key sent!");
+                MessageBox.Show("Request sent!");
             }
             
         }

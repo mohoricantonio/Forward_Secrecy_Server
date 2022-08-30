@@ -82,7 +82,7 @@ namespace ForwardSecrecy
 
             DateTime now = DateTime.Now.AddDays(1);
 
-            returnMe = "save!/&" + LoggedUser.Email + "!/&" + stringBuilder.ToString() + "!/&" + now;
+            returnMe = "save!/&" + LoggedUser.Email + "!/&" + stringBuilder.ToString() + "!/&" + now.ToString("dd.MM.yyyy. HH:mm:ss");
 
             return returnMe;
         }

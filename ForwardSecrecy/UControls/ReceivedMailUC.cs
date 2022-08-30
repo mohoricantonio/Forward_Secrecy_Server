@@ -37,7 +37,8 @@ namespace ForwardSecrecy.UControls
             {
                 id.Add(i.ToString());
                 from.Add(m.From.ToString());
-                subject.Add(m.Subject.ToString());
+                if (m.Subject != null) subject.Add(m.Subject.ToString());
+                else subject.Add("No subject");
                 i--;
             }
             for(int j = 0; j < read.Fetched; j++)
