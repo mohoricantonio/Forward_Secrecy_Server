@@ -22,7 +22,7 @@ namespace ForwardSecrecy.Classes
         {
             try
             {
-                Client = new TcpClient("192.46.236.42", 54000); //60500 stari 54000 novi
+                Client = new TcpClient("192.46.236.42", 54000);
                 Stream = Client.GetStream();
                 Connected = true;
                 return 0;
